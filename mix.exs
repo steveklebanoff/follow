@@ -37,6 +37,7 @@ defmodule Follow.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
+     {:credo, "~> 0.4", only: [:dev, :test]},
      {:oauth, github: "tim/erlang-oauth"},
      {:extwitter, "~> 0.7"}
    ]

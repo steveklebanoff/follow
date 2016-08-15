@@ -40,3 +40,5 @@ config :follow, Follow.Repo,
   database: "follow_dev",
   hostname: "localhost",
   pool_size: 10
+
+import_config "twitter.exs"

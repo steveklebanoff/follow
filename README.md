@@ -1,5 +1,9 @@
 # Follow
 
+# Setup
+- Copy config/twitter.exs.example to twitter.exs and fill in keys
+
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`

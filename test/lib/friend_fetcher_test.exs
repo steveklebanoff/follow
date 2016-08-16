@@ -19,4 +19,15 @@ defmodule Follow.FriendFetcherTest do
       assert Enum.member?(screen_names, "thisisMAILAN")
     end
   end
+
+  test "fetch maximum of 1000 friends" do
+    use_cassette "friend_fetcher/max_1000", match_requests_on: [:query] do
+      swift_friends = Follow.FriendFetcher.friends("SwiftOnSecurity")
+      assert 1000 == Enum.count(swift_friends)
+
+      screen_names = Enum.map(swift_friends, fn(f) -> f.screen_name end)
+      assert Enum.member?(screen_names, "BarefootBoomer")
+      assert Enum.member?(screen_names, "ATTENTION_CNN")
+    end
+  end
 end

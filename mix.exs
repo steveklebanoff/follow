@@ -38,6 +38,7 @@ defmodule Follow.Mixfile do
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
      {:credo, "~> 0.4", only: [:dev, :test]},
+     {:exvcr, "~> 0.7", only: :test},
      {:oauth, github: "tim/erlang-oauth"},
      {:extwitter, "~> 0.7"}
    ]

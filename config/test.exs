@@ -17,3 +17,5 @@ config :follow, Follow.Repo,
   database: "follow_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+import_config "twitter.exs"

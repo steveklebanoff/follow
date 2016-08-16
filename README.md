@@ -1,8 +1,9 @@
 # Follow
 
 # Setup
-- Copy config/twitter.exs.example to twitter.exs and fill in keys
-
+- Copy config/twitter.exs.example to twitter.exs and fill in keys.
+**NOTE**: This asserts all environments are using the same twitter API keys,
+should likely change this in the future.
 
 To start your Phoenix app:
 

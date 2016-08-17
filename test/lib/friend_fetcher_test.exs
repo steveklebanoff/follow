@@ -1,13 +1,5 @@
 defmodule Follow.FriendFetcherTest do
-  use ExUnit.Case, async: false
-  use ExVCR.Mock, adapter: ExVCR.Adapter.Httpc
-
-  setup_all do
-    ExVCR.Config.cassette_library_dir("fixture/vcr_cassettes")
-    ExVCR.Config.filter_sensitive_data("oauth_nonce=.+&", "oauth_nonce=*&")
-    ExVCR.Config.filter_sensitive_data("oauth_signature=.+?&", "oauth_signature=*&")
-    :ok
-  end
+  use Follow.VCRCase
 
   test "fetch limited friends" do
     use_cassette "friend_fetcher/limited", match_requests_on: [:query] do

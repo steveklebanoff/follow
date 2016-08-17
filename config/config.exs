@@ -13,6 +13,7 @@ config :follow, Follow.Endpoint,
   render_errors: [accepts: ~w(html json)],
   pubsub: [name: Follow.PubSub,
            adapter: Phoenix.PubSub.PG2]
+config :follow, ecto_repos: [Follow.Repo]
 
 # Configures Elixir's Logger
 config :logger, :console,

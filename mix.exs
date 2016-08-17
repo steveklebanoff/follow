@@ -18,8 +18,8 @@ defmodule Follow.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Follow, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+     applications: [:phoenix, :phoenix_html, :phoenix_pubsub, :cowboy,
+      :logger, :gettext, :phoenix_ecto, :postgrex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -30,17 +30,19 @@ defmodule Follow.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.1.6"},
+    [{:phoenix, "~> 1.2.0"},
      {:postgrex, ">= 0.0.0"},
-     {:phoenix_ecto, "~> 2.0"},
+     {:phoenix_ecto, "~> 3.0-rc"},
      {:phoenix_html, "~> 2.4"},
+     {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
      {:credo, "~> 0.4", only: [:dev, :test]},
      {:exvcr, "~> 0.7", only: :test},
      {:oauth, github: "tim/erlang-oauth"},
-     {:extwitter, "~> 0.7"}
+     {:extwitter, "~> 0.7"},
+     {:spotify_ex, github: "steveklebanoff/spotify_ex", branch: "upgrade-poison"},
    ]
   end
 
@@ -52,6 +54,7 @@ defmodule Follow.Mixfile do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     ["ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-     "ecto.reset": ["ecto.drop", "ecto.setup"]]
+     "ecto.reset": ["ecto.drop", "ecto.setup"],
+     "test": ["ecto.create --quiet", "ecto.migrate", "test"]]
   end
 end

@@ -1,0 +1,16 @@
+use Mix.Config
+
+config :spotify_ex, client_id: "",
+                    secret_key: "",
+                    # below is only necessary for generating access tokens
+                    user_id: "",
+                    scopes: ["playlist-modify-private","playlist-modify-public"],
+                    callback_url: "http://localhost:4000/callback"
+
+# how to generate access token
+# first, generate URL and go there. use: Spotify.Authorization.url
+# After you authorize, assign the code to a variable and do following:
+# code = ""
+# res = AuthRequest.post("grant_type=authorization_code&code=#{code}&redirect_uri=#{Spotify.callback_url}")
+# inspect res for access token
+config :follow, :spotify_access_token = ""

@@ -19,3 +19,4 @@ config :follow, Follow.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 import_config "twitter.exs"
+import_config "spotify.exs"

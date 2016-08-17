@@ -42,3 +42,4 @@ config :follow, Follow.Repo,
   pool_size: 10
 
 import_config "twitter.exs"
+import_config "spotify.exs"

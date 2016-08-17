@@ -2,8 +2,9 @@
 
 # Setup
 - Copy config/twitter.exs.example to twitter.exs and fill in keys.
-**NOTE**: This asserts all environments are using the same twitter API keys,
-should likely change this in the future.
+- Copy config/spotify.exs.example to spotify.exs and fill in keys
+**NOTE**: This asserts all environments are using the same twitter and
+spotfy API keys, should likely change this in the future.
 
 To start your Phoenix app:
 

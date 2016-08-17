@@ -19,7 +19,7 @@ defmodule Follow.Mixfile do
   def application do
     [mod: {Follow, []},
      applications: [:phoenix, :phoenix_html, :phoenix_pubsub, :cowboy,
-      :logger, :gettext, :phoenix_ecto, :postgrex]]
+      :logger, :gettext, :phoenix_ecto, :postgrex, :httpoison]]
   end
 
   # Specifies which paths to compile per environment.

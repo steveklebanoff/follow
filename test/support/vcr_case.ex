@@ -18,14 +18,11 @@ defmodule Follow.VCRCase do
   using do
     quote do
       use ExUnit.Case, async: false
-      use ExVCR.Mock, adapter: ExVCR.Adapter.Httpc
     end
   end
 
   setup_all do
     ExVCR.Config.cassette_library_dir("fixture/vcr_cassettes")
-    ExVCR.Config.filter_sensitive_data("oauth_nonce=.+&", "oauth_nonce=*&")
-    ExVCR.Config.filter_sensitive_data("oauth_signature=.+?&", "oauth_signature=*&")
     :ok
   end
 end

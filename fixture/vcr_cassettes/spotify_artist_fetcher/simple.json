@@ -1,0 +1,36 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.spotify.com/v1/search?q=Grateful+Dead&type=artist"
+    },
+    "response": {
+      "body": "{\n  \"artists\" : {\n    \"href\" : \"https://api.spotify.com/v1/search?query=Grateful+Dead&offset=0&limit=20&type=artist&market=US\",\n    \"items\" : [ {\n      \"external_urls\" : {\n        \"spotify\" : \"https://open.spotify.com/artist/4TMHGUX5WI7OOm53PqSDAT\"\n      },\n      \"followers\" : {\n        \"href\" : null,\n        \"total\" : 284082\n      },\n      \"genres\" : [ \"jam band\" ],\n      \"href\" : \"https://api.spotify.com/v1/artists/4TMHGUX5WI7OOm53PqSDAT\",\n      \"id\" : \"4TMHGUX5WI7OOm53PqSDAT\",\n      \"images\" : [ {\n        \"height\" : 697,\n        \"url\" : \"https://i.scdn.co/image/bba340d0c2aa4c9cbcbab0a4c3259d8f8e27f0d7\",\n        \"width\" : 1000\n      }, {\n        \"height\" : 446,\n        \"url\" : \"https://i.scdn.co/image/4c000d838221db17a95ec272d79c06560829ab11\",\n        \"width\" : 640\n      }, {\n        \"height\" : 139,\n        \"url\" : \"https://i.scdn.co/image/055f1232a2588ace9747002f972be62ecbb74e92\",\n        \"width\" : 199\n      }, {\n        \"height\" : 45,\n        \"url\" : \"https://i.scdn.co/image/264413e72f38c521bb90e5c5cc3d5c6b5097efdb\",\n        \"width\" : 64\n      } ],\n      \"name\" : \"Grateful Dead\",\n      \"popularity\" : 67,\n      \"type\" : \"artist\",\n      \"uri\" : \"spotify:artist:4TMHGUX5WI7OOm53PqSDAT\"\n    }, {\n      \"external_urls\" : {\n        \"spotify\" : \"https://open.spotify.com/artist/2aQZYlZIhxDRNcIJTTPVDz\"\n      },\n      \"followers\" : {\n        \"href\" : null,\n        \"total\" : 336\n      },\n      \"genres\" : [ ],\n      \"href\" : \"https://api.spotify.com/v1/artists/2aQZYlZIhxDRNcIJTTPVDz\",\n      \"id\" : \"2aQZYlZIhxDRNcIJTTPVDz\",\n      \"images\" : [ ],\n      \"name\" : \"Grateful Dead with Tom Constanten\",\n      \"popularity\" : 14,\n      \"type\" : \"artist\",\n      \"uri\" : \"spotify:artist:2aQZYlZIhxDRNcIJTTPVDz\"\n    }, {\n      \"external_urls\" : {\n        \"spotify\" : \"https://open.spotify.com/artist/2X7U2VClEgOllYx4YuKLbc\"\n      },\n      \"followers\" : {\n        \"href\" : null,\n        \"total\" : 522\n      },\n      \"genres\" : [ ],\n      \"href\" : \"https://api.spotify.com/v1/artists/2X7U2VClEgOllYx4YuKLbc\",\n      \"id\" : \"2X7U2VClEgOllYx4YuKLbc\",\n      \"images\" : [ ],\n      \"name\" : \"Grateful Dead with Bo Diddley\",\n      \"popularity\" : 11,\n      \"type\" : \"artist\",\n      \"uri\" : \"spotify:artist:2X7U2VClEgOllYx4YuKLbc\"\n    }, {\n      \"external_urls\" : {\n        \"spotify\" : \"https://open.spotify.com/artist/6NGVko3qbPA9fNT4xYMr02\"\n      },\n      \"followers\" : {\n        \"href\" : null,\n        \"total\" : 12\n      },\n      \"genres\" : [ ],\n      \"href\" : \"https://api.spotify.com/v1/artists/6NGVko3qbPA9fNT4xYMr02\",\n      \"id\" : \"6NGVko3qbPA9fNT4xYMr02\",\n      \"images\" : [ ],\n      \"name\" : \"Grateful For The Dead\",\n      \"popularity\" : 0,\n      \"type\" : \"artist\",\n      \"uri\" : \"spotify:artist:6NGVko3qbPA9fNT4xYMr02\"\n    } ],\n    \"limit\" : 20,\n    \"next\" : null,\n    \"offset\" : 0,\n    \"previous\" : null,\n    \"total\" : 4\n  }\n}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Wed, 17 Aug 2016 03:18:20 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "2831",
+        "Connection": "keep-alive",
+        "Keep-Alive": "timeout=600",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "public, max-age=7200",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "604800",
+        "Access-Control-Allow-Headers": "Accept, Authorization, Origin, Content-Type",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=31536000;"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.spotify.com/v1/search?q=THIS+IS+TOTALLY+FAKE+YESSSS&type=artist"
+    },
+    "response": {
+      "body": "{\n  \"artists\" : {\n    \"href\" : \"https://api.spotify.com/v1/search?query=THIS+IS+TOTALLY+FAKE+YESSSS&offset=0&limit=20&type=artist&market=US\",\n    \"items\" : [ ],\n    \"limit\" : 20,\n    \"next\" : null,\n    \"offset\" : 0,\n    \"previous\" : null,\n    \"total\" : 0\n  }\n}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Sun, 09 Oct 2016 22:25:07 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "260",
+        "Connection": "keep-alive",
+        "Keep-Alive": "timeout=600",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "public, max-age=7200",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "604800",
+        "Access-Control-Allow-Headers": "Accept, Authorization, Origin, Content-Type",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=31536000;"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

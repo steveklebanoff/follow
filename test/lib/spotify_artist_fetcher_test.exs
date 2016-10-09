@@ -22,4 +22,11 @@ defmodule Follow.SpotifyArtistFetcherTest do
       assert "Mndsgn" == artist.name
     end
   end
+
+  test "returns nil when cant find anything" do
+    use_cassette "spotify_artist_fetcher/find_nothing", match_requests_on: [:query] do
+      {:ok, result} = Follow.SpotifyArtistFetcher.artist("THIS IS TOTALLY FAKE YESSSS")
+      assert nil == result
+    end
+  end
 end

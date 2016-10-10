@@ -14,3 +14,5 @@ config :spotify_ex, client_id: "",
 # res = AuthRequest.post("grant_type=authorization_code&code=#{code}&redirect_uri=#{Spotify.callback_url}")
 # inspect res for access token
 config :follow, spotify_access_token: ""
+# username, i.e. steveklbnf
+config :follow, spotify_username: ""

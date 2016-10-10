@@ -42,7 +42,7 @@ defmodule Follow.Mixfile do
      {:exvcr, "~> 0.7", only: :test},
      {:oauth, github: "tim/erlang-oauth"},
      {:extwitter, "~> 0.7"},
-     {:spotify_ex, github: "steveklebanoff/spotify_ex", branch: "upgrade-poison"},
+     {:spotify_ex, "~> 2.0"},
    ]
   end
 

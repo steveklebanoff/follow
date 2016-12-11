@@ -4,38 +4,53 @@ defmodule Follow.SynchronousExample do
   Example of full flow
   """
   def run(username \\ "steveklbnf") do
-    artist_spotify_ids = username
-      |> Follow.FriendFetcher.friends
-      |> Enum.take(40) # Articial limit for rate limiting
-      |> Enum.filter(&(&1.verified)) # only get verified users
-      |> Enum.map(&(&1.name))
-      |> Enum.map(fn(username) ->
-        IO.puts "Searching spotify for #{username}"
+    spotify_tracks = "steveklbnf"
+      |> get_twitter_friends
+      |> get_spotify_artists
+      |> get_spotify_tracks
 
-        {:ok, spotify_object} = Follow.SpotifyArtistFetcher.artist(username)
-        # ehh pattern matching might nicer, but whatever
-        if spotify_object == nil do
-          IO.puts "no match"
-          nil
-        else
-          IO.puts "got: #{spotify_object.name} | #{spotify_object.id}"
-          spotify_object.id
-        end
-      end)
-      |> Enum.reject(&(Kernel.is_nil &1))
-
-      IO.inspect(artist_spotify_ids)
-      spotify_track_ids = artist_spotify_ids
-        |> Enum.flat_map(fn(spotify_id) ->
-          # TODO: better way to do this?
-          {:ok, tracks} = Follow.SpotifyTopTracksFetcher.top_tracks(spotify_id, 1)
-          tracks
-        end)
-        |> Enum.map(&(&1.id))
-
-      IO.inspect(spotify_track_ids)
       Follow.SpotifyPlaylistCreator.create_playlist(
-        "Playlist for #{username}", spotify_track_ids
+        "Playlist for #{username}",
+        Enum.map(spotify_tracks, &(&1.id))
       )
+  end
+
+  defp get_twitter_friends(username) do
+    username
+      |> Follow.FriendFetcher.friends
+      |> Enum.filter(&(&1.verified)) # only get verified users
+      |> Enum.take(40) # Articial limit for rate limiting
+  end
+
+  defp get_spotify_artists(twitter_friends) do
+    spotify_artists = twitter_friends
+      |> Enum.map(&(&1.name))
+      |> Enum.map(fn(twitter_name) ->
+        {:ok, spotify_object} = Follow.SpotifyArtistFetcher.artist(twitter_name)
+        log_spotify_attempt(twitter_name, spotify_object)
+        spotify_object
+      end)
+      |> Enum.reject(fn (spotify_artist) ->
+        # more obscure results are often not real matches
+        # may want to tweak number popularity number
+        Kernel.is_nil(spotify_artist) || spotify_artist.popularity < 30
+      end)
+  end
+
+  defp get_spotify_tracks(spotify_artists) do
+    Enum.flat_map(spotify_artists, fn(spotify_artist) ->
+      {:ok, tracks} = Follow.SpotifyTopTracksFetcher.top_tracks(
+        spotify_artist.id, 1
+      )
+      tracks
+    end)
+  end
+
+  defp log_spotify_attempt(name, nil) do
+    IO.puts "Spotify #{name}: nothing found"
+  end
+
+  defp log_spotify_attempt(name, spotify_object) do
+    IO.puts "Spotify #{name}: #{spotify_object.name}\t (#{spotify_object.id})\t #{spotify_object.popularity}"
   end
 end

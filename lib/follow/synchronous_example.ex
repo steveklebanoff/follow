@@ -4,7 +4,7 @@ defmodule Follow.SynchronousExample do
   Example of full flow
   """
   def run(username \\ "steveklbnf") do
-    spotify_tracks = "steveklbnf"
+    spotify_tracks = username
       |> get_twitter_friends
       |> get_spotify_artists
       |> get_spotify_tracks
